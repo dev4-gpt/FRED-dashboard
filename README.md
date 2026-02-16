@@ -93,6 +93,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 # FRED-dashboard
 
+Fork -> Clone 
+
+Moving to iCloud : `mv FRED_dashboard icloud/`
+
 ## Connecting Claude code to Figma MCP
 
 to take mockups and turn them into web applications
