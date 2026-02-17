@@ -182,3 +182,16 @@ git push origin main
 ---
 
 These steps will help you resolve most push/pull/merge conflicts when collaborating with others on this repository.
+
+
+## Claude code with Figma MCP server 
+
+- import a design mockup to Claude code & implement the idea (web applications)
+
+## Playwright MCP server
+
+- analyze mockup from figma
+- generate necessary HTML
+- programatically test with screenshot
+
+Requirements: Next.js
