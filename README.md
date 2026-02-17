@@ -79,7 +79,7 @@ npm run lint
 
 ## Learn More
 
-- [FRED API Documentation](https://fred.stlouisfed.org/docs/api/) - Learn about Federal Reserve Economic Data API
+- [FRED API Documentation](https://fred.stlouisfed.org/docs/api/fred/) - Learn about Federal Reserve Economic Data API
 - [Next.js Documentation](https://nextjs.org/docs) - Learn about Next.js features and API
 - [Recharts Documentation](https://recharts.org/en-US/) - Data visualization library
 
@@ -213,3 +213,15 @@ figma-dev-mode-mcp-server http://127.0.0.1:3
 ![figma dev mode](image.png)
 
 ![tools](image-1.png)
+
+## Claude code + Figma + Playwright prompt
+
+Using the following Figma mockup, https://www.figma.com/design/xi9Gfv9HipeH7yLJLCz0T7/key-indicators?node-id=3-3&m=dev .First use the framework dev mcp server to analyze the mockup and build the underlying code in this next.js application. Use the recharts library for creating charts to make this a web application. Check how this application looks using the playwright mcp server and verify it looks as close to the mock as possible.
+
+Link = CMD+L on figma
+
+`/model` = Opus > Sonnet here
+
+- get_image 
+- get_code
+- npm package download
