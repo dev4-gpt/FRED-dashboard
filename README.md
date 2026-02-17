@@ -195,3 +195,21 @@ These steps will help you resolve most push/pull/merge conflicts when collaborat
 - programatically test with screenshot
 
 Requirements: Next.js
+
+## Enable VS code MCP server 
+
+copy the `key-indicators.fig` background 
+
+CMD+L:Mac
+
+Add to claude the MCP servers: Figma, Playwright
+
+`claude mcp add --transport http 
+figma-dev-mode-mcp-server http://127.0.0.1:3
+845/mcp`
+
+`claude mcp add playwright npx @playwright/mcp@latest`
+
+![figma dev mode](image.png)
+
+![tools](image-1.png)
