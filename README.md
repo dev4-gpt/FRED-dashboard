@@ -106,3 +106,79 @@ Sources: https://github.com/https-deeplearning-ai/FRED-dashboard
 Whenever you want to update to most recent updates = 
 
 `git pull upstream main`
+
+
+## Resolving Git Push/Pull Conflicts (Troubleshooting)
+
+If you encounter errors when pushing to the remote repository (e.g., "non-fast-forward" or merge conflicts), follow these steps to resolve them:
+
+### 1. Set Python Version (if using pyenv)
+```bash
+pyenv shell 3.11.6
+```
+
+### 2. Stage and Commit Your Changes
+```bash
+git add .
+git commit -m "Your commit message"
+```
+
+### 3. Attempt to Push
+```bash
+git push origin main
+```
+
+If you see an error like:
+```
+! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/your-repo/FRED-dashboard.git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+```
+
+### 4. Pull Remote Changes (Handle Divergent Branches)
+If prompted, you may need to specify how to reconcile branches. To merge remote changes with your local changes:
+```bash
+git pull origin main --no-rebase
+```
+
+If you get a message about an unfinished rebase, abort it first:
+```bash
+git rebase --abort
+```
+
+Then try pulling again:
+```bash
+git pull origin main --no-rebase
+```
+
+### 5. Resolve Merge Conflicts
+
+If you see a message like:
+```
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+```
+Open the conflicted file(s) and look for conflict markers:
+```
+<<<<<<< HEAD
+Your local changes
+=======
+Incoming changes from remote
+>>>>>>> main
+```
+Edit the file to keep the desired content and remove the conflict markers.
+
+### 6. Stage and Commit the Resolved File(s)
+```bash
+git add README.md
+git commit -m "Resolve merge conflicts"
+```
+
+### 7. Push the Final Changes
+```bash
+git push origin main
+```
+
+---
+
+These steps will help you resolve most push/pull/merge conflicts when collaborating with others on this repository.
