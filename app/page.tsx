@@ -116,7 +116,7 @@ export default function Dashboard() {
                 <span className="text-xs text-gray-500">All Urban Consumers: All Items (CPIAUCSL)</span>
               </div>
               {cpiLoading ? (
-                <div className="h-[250px] flex items-center justify-center">
+                <div className="h-62.5 flex items-center justify-center">
                   <Loader2 className="w-8 h-8 animate-spin text-gray-400" />
                 </div>
               ) : (
@@ -134,8 +134,10 @@ export default function Dashboard() {
                       domain={['dataMin - 5', 'dataMax + 5']}
                     />
                     <Tooltip 
-                      labelFormatter={formatTooltipDate}
-                      formatter={(value: number) => value.toFixed(2)}
+                      labelFormatter={(label) => formatTooltipDate(String(label))}
+                      formatter={(value: number | undefined) =>
+                        typeof value === 'number' ? value.toFixed(2) : ''
+                      }
                     />
                     <Line 
                       type="monotone" 
@@ -162,7 +164,7 @@ export default function Dashboard() {
                 <span className="text-xs text-gray-500">Civilian Unemployment Rate (UNRATE)</span>
               </div>
               {unemploymentLoading ? (
-                <div className="h-[250px] flex items-center justify-center">
+                <div className="h-62.5 flex items-center justify-center">
                   <Loader2 className="w-8 h-8 animate-spin text-gray-400" />
                 </div>
               ) : (
@@ -181,8 +183,10 @@ export default function Dashboard() {
                       tickFormatter={(value) => `${value}%`}
                     />
                     <Tooltip 
-                      labelFormatter={formatTooltipDate}
-                      formatter={(value: number) => `${value.toFixed(1)}%`}
+                      labelFormatter={(label) => formatTooltipDate(String(label))}
+                      formatter={(value: number | undefined) =>
+                        typeof value === 'number' ? `${value.toFixed(1)}%` : ''
+                      }
                     />
                     <Area 
                       type="monotone" 
@@ -209,7 +213,7 @@ export default function Dashboard() {
                 <span className="text-xs text-gray-500">Market Yield on U.S. Treasury Securities (DGS10)</span>
               </div>
               {treasury10YLoading ? (
-                <div className="h-[250px] flex items-center justify-center">
+                <div className="h-62.5 flex items-center justify-center">
                   <Loader2 className="w-8 h-8 animate-spin text-gray-400" />
                 </div>
               ) : (
@@ -228,8 +232,10 @@ export default function Dashboard() {
                       tickFormatter={(value) => `${value}%`}
                     />
                     <Tooltip 
-                      labelFormatter={formatTooltipDate}
-                      formatter={(value: number) => `${value.toFixed(2)}%`}
+                      labelFormatter={(label) => formatTooltipDate(String(label))}
+                      formatter={(value: number | undefined) =>
+                        typeof value === 'number' ? `${value.toFixed(2)}%` : ''
+                      }
                     />
                     <Line 
                       type="monotone" 
@@ -256,7 +262,7 @@ export default function Dashboard() {
                 <span className="text-xs text-gray-500">Market Yield on U.S. Treasury Securities (DGS3MO)</span>
               </div>
               {treasury3MLoading ? (
-                <div className="h-[250px] flex items-center justify-center">
+                <div className="h-62.5 flex items-center justify-center">
                   <Loader2 className="w-8 h-8 animate-spin text-gray-400" />
                 </div>
               ) : (
@@ -275,8 +281,10 @@ export default function Dashboard() {
                       tickFormatter={(value) => `${value}%`}
                     />
                     <Tooltip 
-                      labelFormatter={formatTooltipDate}
-                      formatter={(value: number) => `${value.toFixed(2)}%`}
+                      labelFormatter={(label) => formatTooltipDate(String(label))}
+                      formatter={(value: number | undefined) =>
+                        typeof value === 'number' ? `${value.toFixed(2)}%` : ''
+                      }
                     />
                     <Line 
                       type="monotone" 
